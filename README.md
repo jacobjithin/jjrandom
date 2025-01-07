@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Playwright SDET Test Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Playwright SDET Test Boilerplate! This repository contains a boilerplate code setup specifically designed for candidates applying for a Software Development Engineer in Test (SDET) position. It provides a solid foundation to get you started with writing and running automated tests using Playwright.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### `yarn install`
 
-## Expanding the ESLint configuration
+Installs all the dependencies required for the project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### `yarn test`
 
-- Configure the top-level `parserOptions` property like this:
+Runs all the test cases using Playwright.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### `yarn lint`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Checks the code for any linting errors using ESLint.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### `yarn lint:fix`
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Automatically fixes the linting errors in the code.
+
+### `yarn ci`
+
+Runs the linting and test scripts in a continuous integration environment.
