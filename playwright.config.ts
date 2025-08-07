@@ -14,6 +14,12 @@ dotenv.config({ path: path.resolve('.env') });
  */
 export default defineConfig({
   testDir: './tests',
+  timeout: 10 *1000,
+  expect: { timeout:5 * 1000},
+  use:
+  {actionTimeout:6000,
+    navigationTimeout:10000,
+  },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
