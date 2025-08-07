@@ -1,23 +1,19 @@
-import {Page,Locator} from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
-export class LoginPO
-{
- page: Page;
- joinRealLink: Locator;
+export class LoginPO {
+  page: Page;
+  joinRealLink: Locator;
 
- constructor(page: Page)
- {
-    this.page= page;
-    this.joinRealLink= page.getByRole('link',{name:'Join Real'})
- }
+  constructor(page: Page) {
+    this.page = page;
+    this.joinRealLink = page.getByRole('link', { name: 'Join Real' });
+  }
 
- async NavigateToReal()
- {
+  async NavigateToReal() {
     await this.page.goto('https://bolt.playrealbrokerage.com/');
- }
+  }
 
-  async NavigateToRegister()
- {
+  async NavigateToRegister() {
     await this.joinRealLink.click();
- }
+  }
 }
